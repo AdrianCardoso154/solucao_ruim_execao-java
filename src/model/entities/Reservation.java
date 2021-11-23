@@ -54,6 +54,6 @@ public class Reservation {
 	@Override
 	public String toString() {
 		return "Reservetion: Room " + this.getRoom_number() + ", check-in: " + sdf1.format(cheking) + ", check-out: "
-				+ sdf1.format(chekout) + ", " + this.duration() + "nigths";
+				+ sdf1.format(chekout) + ", " + this.duration() + " nigths";
 	}
 }
