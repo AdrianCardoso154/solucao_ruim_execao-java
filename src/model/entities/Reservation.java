@@ -46,19 +46,19 @@ public class Reservation {
 		return cal2.get(Calendar.DAY_OF_YEAR) - cal.get(Calendar.DAY_OF_YEAR);
 	}
 
-	public String update_dates(Date chekin, Date chekout1) {
+	public void update_dates(Date chekin, Date chekout1) {
 		Date now = new Date();
 
 		if (chekin.before(now) || chekout1.before(now)) {
-			return "reservation dates for update must be future dates!!!";
+			throw new IllegalArgumentException("reservation dates for update must be future dates!!!");// lança uma
+																										// exeção para
+																										// ser tratada
 		} else if (!chekout1.after(cheking)) {
-			return "check-out date must be after check-in date!!!";
+			throw new IllegalArgumentException("check-out date must be after check-in date!!!");
 		}
 
 		this.cheking = chekin;
 		this.chekout = chekout1;
-
-		return null;
 	}
 
 	@Override
